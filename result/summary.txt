@@ -1,0 +1,184 @@
+
+Call:
+C5.0.default(x = structure(list(age = c(72L, 64L, 44L, 41L, 55L, 21L, 50L,
+ "E", "B", "C", "D", "C", "B", "A", "A", "C", "C", "A", "B", "A", "F",
+ "C", "A", "C", "A", "B", "A", "A", "E", "C", "A", "A", "A", "A", "A
+
+
+C5.0 [Release 2.07 GPL Edition]  	Tue Dec  4 05:15:43 2018
+-------------------------------
+
+Class specified by attribute `outcome'
+
+Read 32562 cases (15 attributes) from undefined.data
+
+Decision tree:
+
+capital.gain > 6849:
+:...age <= 61: 1 (1228/8)
+:   age > 61:
+:   :...capital.gain > 10566: 1 (91/1)
+:       capital.gain <= 10566:
+:       :...capital.gain <= 10520: 1 (40/2)
+:           capital.gain > 10520: 0 (8)
+capital.gain <= 6849:
+:...relationship in {D,B,F,E}:
+    :...capital.loss > 2206:
+    :   :...capital.loss > 3683: 0 (8)
+    :   :   capital.loss <= 3683:
+    :   :   :...capital.loss > 2339: 1 (42/4)
+    :   :       capital.loss <= 2339:
+    :   :       :...capital.loss > 2282: 0 (14)
+    :   :           capital.loss <= 2282:
+    :   :           :...capital.loss <= 2231: 1 (6)
+    :   :               capital.loss > 2231: 0 (35/15)
+    :   capital.loss <= 2206:
+    :   :...capital.gain > 4650:
+    :       :...capital.gain <= 4787: 1 (27)
+    :       :   capital.gain > 4787:
+    :       :   :...capital.gain > 5178: 0 (66/1)
+    :       :       capital.gain <= 5178:
+    :       :       :...capital.gain <= 4865: 0 (13)
+    :       :           capital.gain > 4865: 1 (8)
+    :       capital.gain <= 4650:
+    :       :...capital.gain > 114: 0 (498/1)
+    :           capital.gain <= 114:
+    :           :...education.num <= 12: 0 (13539/306)
+    :               education.num > 12:
+    :               :...education.num <= 14: 0 (3053/358)
+    :                   education.num > 14:
+    :                   :...hours.per.week <= 51: 0 (165/46)
+    :                       hours.per.week > 51:
+    :                       :...age <= 32: 0 (20/3)
+    :                           age > 32: 1 (36/7)
+    relationship in {C,A}:
+    :...capital.gain > 5013: 1 (116/4)
+        capital.gain <= 5013:
+        :...capital.loss > 1844:
+            :...capital.loss <= 1980: 1 (542/14)
+            :   capital.loss > 1980:
+            :   :...capital.loss <= 2206: 0 (78/3)
+            :       capital.loss > 2206:
+            :       :...capital.loss > 2415: 0 (10)
+            :           capital.loss <= 2415:
+            :           :...capital.loss > 2377: 1 (57)
+            :               capital.loss <= 2377:
+            :               :...age <= 59: 0 (13/1)
+            :                   age > 59: 1 (15/2)
+            capital.loss <= 1844:
+            :...education.num > 12:
+                :...capital.loss > 625: 0 (40/8)
+                :   capital.loss <= 625:
+                :   :...capital.gain > 3103:
+                :       :...capital.gain <= 4101: 0 (25)
+                :       :   capital.gain > 4101:
+                :       :   :...capital.gain <= 4416: 1 (14)
+                :       :       capital.gain > 4416: 0 (22)
+                :       capital.gain <= 3103:
+                :       :...age <= 25: 0 (68/17)
+                :           age > 25:
+                :           :...occupation in {?,L,N}: 1 (0)
+                :               occupation in {C,H,J,G,K}:
+                :               :...workclass in {C,?,A,D,B,G,H}: 0 (161.4/38.5)
+                :               :   workclass in {E,F}: 1 (10.3/1.2)
+                :               occupation in {I,B,D,M,A,F,E}:
+                :               :...hours.per.week > 31: 1 (2724.3/818.9)
+                :                   hours.per.week <= 31:
+                :                   :...relationship = A: 1 (77.2/27.6)
+                :                       relationship = C:
+                :                       :...race in {E,D}: 1 (3.9/1)
+                :                           race in {B,C}: 0 (9.9/1)
+                :                           race = A:
+                :                           :...education.num <= 14: 0 (144.1/39.6)
+                :                               education.num > 14: [S1]
+                education.num <= 12:
+                :...capital.gain > 4416: 0 (75)
+                    capital.gain <= 4416:
+                    :...capital.gain > 4101: 1 (59/10)
+                        capital.gain <= 4101:
+                        :...capital.gain > 3103: 0 (159)
+                            capital.gain <= 3103:
+                            :...capital.gain > 2993: 1 (70/4)
+                                capital.gain <= 2993:
+                                :...capital.gain > 401: 0 (136)
+                                    capital.gain <= 401:
+                                    :...education.num <= 8: 0 (1546/156)
+                                        education.num > 8:
+                                        :...capital.loss > 1485: 0 (98/5)
+                                            capital.loss <= 1485:
+                                            :...age <= 33: 0 (1912/380)
+                                                age > 33:
+                                                :...hours.per.week <= 35: [S2]
+                                                    hours.per.week > 35: [S3]
+
+SubTree [S1]
+
+hours.per.week <= 23: 0 (13.8/3.9)
+hours.per.week > 23: 1 (17.9/3)
+
+SubTree [S2]
+
+relationship = C: 0 (481/65)
+relationship = A:
+:...education.num <= 11: 0 (170/54)
+    education.num > 11: 1 (16/5)
+
+SubTree [S3]
+
+occupation in {?,C,H,J,G,K,L,N}: 0 (1422.8/375.1)
+occupation in {I,B,D,M,A,F,E}:
+:...workclass in {?,B,G,H}: 0 (363.9/105.6)
+    workclass in {C,A,D,E,F}:
+    :...occupation in {A,E}: 1 (719.6/289.5)
+        occupation in {I,B,D,M,F}:
+        :...workclass in {D,E,F}:
+            :...age <= 59: 1 (408/160.2)
+            :   age > 59: 0 (29.8/8.4)
+            workclass in {C,A}:
+            :...education in {A,K,D,M,G,I,C,N,L,E,H,J,O}: 0 (1161.3/428.4)
+                education in {B,F}:
+                :...occupation in {B,M}: 0 (301.3/138.2)
+                    occupation = D: 1 (181.6/87.9)
+                    occupation = F:
+                    :...workclass = C: 1 (93.3/38)
+                    :   workclass = A: 0 (3)
+                    occupation = I:
+                    :...relationship = C: 0 (61.2/18.3)
+                        relationship = A:
+                        :...fnlwgt <= 156848: 0 (18.1/5)
+                            fnlwgt > 156848: 1 (16.1/2.1)
+
+
+Evaluation on training data (32562 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    64 4059(12.5%)   <<
+
+
+	   (a)   (b)    <-classified as
+	  ----  ----
+	 23380  1472    (a): class 0
+	  2587  5123    (b): class 1
+
+
+	Attribute usage:
+
+	100.00%	capital.gain
+	 95.80%	relationship
+	 95.45%	capital.loss
+	 91.05%	education.num
+	 36.98%	age
+	 26.61%	hours.per.week
+	 23.71%	occupation
+	 10.57%	workclass
+	  5.86%	education
+	  0.59%	race
+	  0.11%	fnlwgt
+
+
+Time: 0.3 secs
+
+
